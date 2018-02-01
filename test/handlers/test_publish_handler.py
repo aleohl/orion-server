@@ -25,7 +25,7 @@ class TestPublishHandler(TestCase):
         self.assertEqual(resp['message'], 'Not a location publish.')
         self.assertEqual(status, 400)
 
-    def test_location_report_valid(self):
+    def test_location_report_valid_android(self):
         mock_headers = {
             'X-Limit-U': 'user',
             'X-Limit-D': 'device',
