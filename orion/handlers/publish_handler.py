@@ -24,9 +24,7 @@ class PublishHandler(BaseHandler):
             return self.error(status=400, message='Not a location publish.')
 
         if self.data.get('topic'):
-            topic = self.data.get('topic').split('/')
-            user = topic[1]
-            device = topic[2]
+            _, user, device = self.data.get('topic').split('/')
         else:
             user = request.headers.get('X-Limit-U')
             device = request.headers.get('X-Limit-D')
